@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InterfaceApplication
 {
-    class Dvd : IKolcsonozheto
+    class Dvd : IKolcsonozheto, IComparable<Dvd>
     {
         string cim;
         int hossz; //perc
@@ -50,6 +50,28 @@ namespace InterfaceApplication
         public int KolcsonzesiIdo()
         {
             return 14;
+        }
+
+        public int CompareTo(Dvd other)
+        {
+            return this.hossz.CompareTo(other.hossz);
+            //return this.hossz - other.hossz;
+            /*
+            if (this.hossz > other.hossz)
+            {
+                return 1;
+            }
+            else if (this.hossz < other.hossz)
+            {
+                return -1;
+            }
+            else
+            {
+                //if (this.cim.CompareTo(other.cim) > 0)...
+                //Betűrendben később akkor nagyobb
+                return 0;
+            }
+            */
         }
     }
 }

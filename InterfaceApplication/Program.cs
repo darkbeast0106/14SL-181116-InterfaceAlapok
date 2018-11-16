@@ -37,7 +37,11 @@ namespace InterfaceApplication
             {
                 Console.WriteLine(item.MegjelenitendoNev() + " // " + item.KolcsonzesiIdo());
             }
-
+            dvdk.Sort();
+            foreach (var item in dvdk)
+            {
+                Console.WriteLine(item.Cim);
+            }
 
             Console.ReadLine();
         }
